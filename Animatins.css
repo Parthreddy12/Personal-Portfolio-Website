@@ -1,0 +1,34 @@
+.fade-in{
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+.slide-right{
+    opacity: 0;
+    animation: slideFromRight 2s ease-out;
+}
+@keyframes fadeIn{
+    from { 
+        opacity: 0; 
+    }
+    to { 
+        opacity: 1; 
+    }
+}
+@keyframes slideFromRight {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes expandLine {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
