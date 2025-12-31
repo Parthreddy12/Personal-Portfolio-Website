@@ -1,31 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="Animatins.css">
+    <link rel="stylesheet" href="src/Animatins.css">
     <title>Personal Portfolio</title>
 </head>
 <header>
     <nav>
         <div class="brand">
-        <h1 class="logo">PB</h1>
-        <h3 class="name">Parth Barure</h3>
+            <h1 class="logo fade-in" style="animation-delay: 1.35s;">PB</h1>
+            <h3 class="name fade-in" style="animation-delay: 1.4s;">Parth Barure</h3>
         </div>
         <ul>
-            <li><a class="nav-link" href="#"><i class="fas fa-home"></i><br><span>Home</span></a></li>
-            <li><a class="nav-link" href="#"><i class="fas fa-project-diagram"></i><br><span>Projects</span></a></li>
-            <li><a class="nav-link" href="#"><i class="fas fa-code"></i><br><span>Skills</span></a></li>
-            <li><a class="nav-link" href="#"><i class="fas fa-certificate"></i><br><span>Certificates</span></a></li>
-            <li><a class="nav-link" href="#"><i class="fas fa-user"></i><br><span>About</span></a></li>
-            <li><a class="nav-link" href="#"><i class="fas fa-file-alt"></i><br><span>Resume</span></a></li>
-            <li><a class="nav-link" href="#"><i class="fas fa-envelope"></i><br><span>Contact</span></a></li>
+            <li class="slide-up" style="animation-delay: 0.4s;"><a class="nav-link" href="index.html"><i
+                        class="fas fa-home"></i><br><span>Home</span></a></li>
+            <li class="slide-up" style="animation-delay: 0.3s;"><a class="nav-link" href="#"><i
+                        class="fas fa-project-diagram"></i><br><span>Projects</span></a></li>
+            <li class="slide-up" style="animation-delay: 0.2s;"><a class="nav-link" href="#"><i
+                        class="fas fa-code"></i><br><span>Skills</span></a></li>
+            <li class="slide-up" style="animation-delay: 0.1s;"><a class="nav-link" href="#"><i
+                        class="fas fa-certificate"></i><br><span>Certificates</span></a></li>
+            <li class="slide-up" style="animation-delay: 0.2s;"><a class="nav-link" href="#"><i
+                        class="fas fa-user"></i><br><span>About</span></a></li>
+            <li class="slide-up" style="animation-delay: 0.3s;"><a class="nav-link" href="#"><i
+                        class="fas fa-file-alt"></i><br><span>Resume</span></a></li>
+            <li class="slide-up" style="animation-delay: 0.4s;"><a class="nav-link" href="#"><i
+                        class="fas fa-envelope"></i><br><span>Contact</span></a></li>
         </ul>
     </nav>
 </header>
+
 <body>
-    <img class="photo" src="Images/MyPhoto.png" alt="">
+    <div class="info">
+        <img class="photo slide-right" src="Images/MyPhoto.png" alt="">
+        <div class="intro">
+            <div class="fade-up">Hi, I'm</div>
+            <span class="highlight fade-up">Parth Barure</span>
+            <div class="logos">
+                <span class="slide-up" style="animation-delay:0.1s ;">C</span>
+                <span class="slide-up" style="animation-delay:0.2s ;">C++</span>
+                <span class="slide-up" style="animation-delay:0.3s ;">JAVA</span>
+                <span class="slide-up" style="animation-delay:0.4s ;">PYTHON</span>
+                <span class="slide-up" style="animation-delay:0.5s ;">HTML</span>
+                <span class="slide-up" style="animation-delay:0.6s ;">CSS</span>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
