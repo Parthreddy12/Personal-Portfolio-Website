@@ -62,11 +62,7 @@
         opacity: 1;
     }
 }
-@keyframes line{
-    from{
-        width: 0;
-    }
-    to{
-        width: 300px;
-    }
+@keyframes animate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
