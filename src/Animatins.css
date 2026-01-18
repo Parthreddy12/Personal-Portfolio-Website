@@ -1,6 +1,10 @@
 .slide-right{
     opacity: 0;
-    animation: slideFromRight 1s ease-out forwards;
+    animation: slideFromRight 1.5s ease forwards;
+}
+.slide-left{
+    opacity: 0;
+    animation: slideFromLeft 1.5s ease forwards;
 }
 .slide-up{
     opacity: 0;
@@ -24,14 +28,22 @@
 }
 @keyframes slideFromRight {
     from {
-        transform: translateX(-50px);
+        transform: translateX(-80px);
         opacity: 0;
-        width: 250px;
     }
     to {
         transform: translateX(0);
         opacity: 1;
-        width: 300px;
+    }
+}
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(80px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 @keyframes expandLine {
