@@ -18,6 +18,54 @@
     opacity: 0;
     animation: FadeUp 1s ease forwards;
 }
+.slide-up-right{
+    animation: slideUpFromRight 1s ease forwards;
+    animation-timeline: view(10% 0%);
+}
+.slide-up-left{
+    animation: slideUpFromLeft 1s ease forwards;
+    animation-timeline: view(10% 0%);
+} 
+.slide-up-auto{
+    animation: slideUpAtView 1s ease forwards;
+    animation-timeline: view(10% 0%);
+}
+@keyframes slideUpAtView {
+    from{
+        opacity: 0;
+        transform: translateY(40px);
+        scale: 0.8;
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+        scale: 1;
+    }
+}
+@keyframes slideUpFromRight {
+    0% {
+        transform: translateX(100px);
+        scale: 0.5;
+        opacity: 0; 
+    }
+    65% {
+        transform: translateX(0);
+        scale: 1;
+        opacity: 1;
+    }
+}
+@keyframes slideUpFromLeft {
+    0% {
+        transform: translateX(-200px);
+        scale: 0.5;
+        opacity: 0; 
+    }
+    65% {
+        transform: translateX(0);
+        scale: 1;
+        opacity: 1;
+    }
+}
 @keyframes fadeIn{
     from { 
         opacity: 0; 
