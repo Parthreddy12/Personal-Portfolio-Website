@@ -1,45 +1,5 @@
-#home{
-    position: relative;
-}
-.scroll-down {
-  position: absolute;
-  bottom: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 130px;
-  height: 40px;
-  border: 2px solid #38bdf8;
-  border-radius: 25px;
-  display: flex;
-  justify-content: center;
-}
-.scroll-down p{
-    font-size: 12px;
-    color: #38bdf8;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-self: center;
-    align-items: center;
-}
-.scroll-down span {
-  width: 10px;
-  height: 10px;
-  color: #38bdf8;
-  /* background: #38bdf8; */
-  border-radius: 50%;
-  animation: scroll 1.5s  infinite;
-}
 
-@keyframes scroll {
-  0% {
-      transform: translateY(20px);
-      opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(0);
-  }
-}
+
 
 .photo {
     width: 300px;
@@ -100,6 +60,7 @@
     margin-top: 15px;
     font-size: 20px;
     display: flex;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
@@ -128,8 +89,7 @@
     animation: animate 5s linear infinite;
     z-index: -1;
     transform: rotate(90deg);
-    filter:
-        drop-shadow(0 0 10px rgb(0, 255, 145));
+    filter:drop-shadow(0 0 10px rgb(0, 255, 145));
 }
 
 .logos span::after {
@@ -229,6 +189,71 @@
     justify-content: center;
     align-items: center;
 }
+#home{
+    position: relative;
+}
+.scroll-down {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130px;
+  height: 40px;
+  border: 2px solid #38bdf8;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+    filter: drop-shadow(0 0 5px #00ffff);
+  gap: 10px;
+}
+.scroll-down p{
+    font-size: 12px;
+    color: #38bdf8;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+
+}
+.scroll-down span {
+  width: 10px;
+  height: 10px;
+  color: #38bdf8;
+  /* background: #38bdf8; */
+  border-radius: 50%;
+  animation: scroll 1.5s  infinite;
+
+
+}
+@keyframes scroll {
+  0% {
+      transform: translateY(20px);
+      opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+  }
+}
+
+.setting-icon{
+    width: 120px;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    /* filter: drop-shadow(0 0 5px #00ffff); */
+    animation: rotate 5s ease;
+    animation-timeline: view();
+}
+.setting-icon2{
+    width: 80px;
+    position: absolute;
+    bottom: 60px;
+    left: 90px;
+    /* filter: drop-shadow(0 0 5px #00ffff); */
+    animation: rotate2 5s ease;
+    animation-timeline: view();
+}
  
 /* about section */
 section {
@@ -254,6 +279,7 @@ section {
     height: 100px;
     border-radius: 50%;
     background: #00ff1e;
+    animation: rotate3 1s linear infinite;
     filter: blur(150px);
     display: block;
 }
@@ -266,6 +292,8 @@ section {
     height: 100px;
     border-radius: 50%;
     background: #00ff1e;
+    animation: rotate3 10s linear infinite;
+
     filter: blur(150px);
     display: block;
 }
@@ -348,4 +376,64 @@ section {
     padding: 0 30px 30px 30px;
     line-height: 1.8;
     letter-spacing: 0.5px;
+}
+
+/* skill section */
+#skills{
+    background: #0b1320;
+    max-width: 100%;
+    margin: 80px auto;
+    padding: 20px;
+    position: relative;
+    overflow: visible;
+}
+#skills::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 46.5%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: cyan;
+    filter: blur(150px);
+    display: block;
+}
+#skills::before{
+    position: absolute;
+    content: "";
+    top: 90px;
+    right: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: cyan;
+    filter: blur(50px);
+    display: block;
+    opacity: 0;
+    animation: lightbulb 1s ease forwards;
+    animation-timeline: view(55% 0%);
+}
+.Languages{
+    color: #38bdf8;
+    font-size: 32px;
+    margin-left: 20px;
+    padding: 0 30px 30px 30px;
+}
+.idea-icon{
+    width: 200px;
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0 5px #00ffff);
+    animation: drop 5s ease;
+    animation-timeline: view();
+}
+.PS{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
 }
