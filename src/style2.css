@@ -206,6 +206,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 70%,
+        rgba(0, 0, 0, 0.7) 85%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 70%,
+        rgba(0, 0, 0, 0.7) 85%,
+        transparent 100%
+    );
 }
 
 #home {
@@ -291,9 +306,24 @@ section {
     background: #0b1320;
     max-width: 100%;
     margin: 80px auto;
-    padding: 20px;
+    padding: 40px;
     position: relative;
     overflow: visible;
+        -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
 }
 
 #about::after {
@@ -419,6 +449,21 @@ section {
     padding: 20px;
     position: relative;
     overflow: visible;
+        -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+    );
 }
 
 #skills::after {
@@ -493,11 +538,25 @@ section {
     flex-direction: column;
     align-items: center;
 
-    background:
-        radial-gradient(ellipse at 50% 65%,
-            rgba(130, 0, 40, 0.20),
-            transparent 50%),
-        linear-gradient(160deg, #05070e, #101525 60%, #030408);
+    
+background:
+    radial-gradient(
+        ellipse at 50% 85%,
+        rgba(255, 35, 75, 0.20),
+        transparent 48%
+    ),
+    radial-gradient(
+        ellipse at 0% 50%,
+        rgba(255, 35, 65, 0.10),
+        transparent 45%
+    ),
+    linear-gradient(
+        160deg,
+        #05070e,
+        #10101a 60%,
+        #030408
+    );
+
 
     isolation: isolate;
 }
@@ -585,7 +644,7 @@ section {
 .poster-bottom {
     position: absolute;
     z-index: 4;
-    bottom: 28px;
+    bottom: 80px;
     left: 15px;
     right: 15px;
 
@@ -635,6 +694,7 @@ section {
     text-align: center;
     text-shadow: 0 2px 8px #000;
 }
+
 
 @keyframes posterRise {
     from {
@@ -721,4 +781,159 @@ section {
         font-size: 11px;
         padding: 10px 14px;
     }
+}
+
+
+/* Cinematic name intro */
+
+.poster-title h1 .name-left,
+.poster-title h1 .name-right {
+    display: inline-block;
+    opacity: 0;
+    animation-duration: 1.4s;
+    animation-timing-function: cubic-bezier(.2, .8, .2, 1);
+    animation-fill-mode: forwards;
+}
+
+.poster-title h1 .name-left {
+    animation-name: parthEnter;
+}
+
+.poster-title h1 .name-right {
+    animation-name: barureEnter;
+    animation-delay: 0.15s;
+}
+
+@keyframes parthEnter {
+    from {
+        opacity: 0;
+        transform: translateX(-100vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes barureEnter {
+    from {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Show portrait after name animation */
+
+.poster-home .photo {
+    animation-delay: 1.8s;
+}
+
+/* Show bottom content after portrait starts */
+
+.poster-bottom {
+    opacity: 0;
+    animation: bottomReveal 0.8s ease 2.5s forwards;
+}
+
+@keyframes bottomReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Name animation */
+.poster-title h1 .name-left,
+.poster-title h1 .name-right {
+    display: inline-block;
+    opacity: 0;
+    animation-duration: 1.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.poster-title h1 .name-left {
+    animation-name: parthEnter;
+}
+
+.poster-title h1 .name-right {
+    animation-name: barureEnter;
+    animation-delay: 0.2s;
+}
+
+@keyframes parthEnter {
+    from {
+        opacity: 0;
+        transform: translateX(-100vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes barureEnter {
+    from {
+        opacity: 0;
+        transform: translateX(100vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Portrait appears after the names */
+.poster-home .photo {
+    animation-delay: 1.8s;
+}
+
+/* Bottom content appears last */
+.poster-bottom {
+    opacity: 0;
+    animation: bottomReveal 0.8s ease 2.5s forwards;
+}
+
+@keyframes bottomReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Intro overlay */
+.portfolio-intro {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 99999;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.portfolio-intro.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Hide website until intro finishes */
+body:not(.portfolio-intro-done) > *:not(.portfolio-intro) {
+    visibility: hidden;
+}
+
+body.portfolio-intro-done > *:not(.portfolio-intro) {
+    visibility: visible;
 }

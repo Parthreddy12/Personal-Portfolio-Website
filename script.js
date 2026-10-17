@@ -23,3 +23,25 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+// ===== PORTFOLIO INTRO =====
+
+document.addEventListener("DOMContentLoaded", () => {
+    if (sessionStorage.getItem("portfolio_intro_completed")) {
+        document.body.classList.add("portfolio-intro-done");
+        return;
+    }
+
+    const intro = document.createElement("div");
+    intro.className = "portfolio-intro";
+    document.body.appendChild(intro);
+
+    setTimeout(() => {
+        document.body.classList.add("portfolio-intro-done");
+        intro.classList.add("hide");
+
+        sessionStorage.setItem("portfolio_intro_completed", "true");
+
+        setTimeout(() => intro.remove(), 700);
+    }, 5000);
+});
